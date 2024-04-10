@@ -25,7 +25,7 @@ const handler = async (req: NextRequest) => {
     const urlResponse = await fetch(targetUrl);
     return urlResponse;
   } catch (error) {
-    console.error(error);
+    console.error(`Error when processing, URL -> ${targetUrl}: ${error}`);
     return new Response(
       JSON.stringify({
         error: "Error in fetching url"
